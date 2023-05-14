@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File List</title>
+    <style>
+        body {
+            margin-top: 10%;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td:last-child {
+            text-align: center;
+        }
+        a.button {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            cursor: pointer;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            color: #fff;
+            background-color: #337ab7;
+            text-decoration: none;
+    
+        }
+
+        a.button:hover {
+            background-color: #286090;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DATA LIST </h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>File</th>
+                    <th>Action</th>
+                
+                </tr>
+                
+            </thead>
+            <tbody>
+                {% for file in files %}
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td>{{file}}</td>
+                    <td>
+                        <a href="/downlaod/{{file}}">Download</a> |
+                        <a href="/open/{{file}}">Open</a>        
+                        {% endfor %}
+                
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="logout">Logout</a>
+    </div>
+</body>
+</html>

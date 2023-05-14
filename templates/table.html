@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table</title>
+</head>
+<body>
+    <h1>Data Table</h1>
+    <table>
+        <thead>
+            <tr>
+                {% for column in table_data[0].keys() %}
+                <th>{{ column }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in table_data %}
+            <tr>
+                {% for value in row.values() %}
+                <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
